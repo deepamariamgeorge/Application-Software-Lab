@@ -2,7 +2,7 @@ USE lab;
 
 #1
 CREATE TABLE EMPLOYEE(
-	EmployeeCode CHAR(4) NOT NULL, 
+    EmployeeCode CHAR(4) NOT NULL, 
     EmployeeName VARCHAR(10) NOT NULL,
     Designation VARCHAR(30),
     DateOfBirth DATE,
