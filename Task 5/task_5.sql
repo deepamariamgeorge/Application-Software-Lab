@@ -1,0 +1,54 @@
+USE lab;
+
+#a
+CREATE TABLE CLASS(
+	StudID CHAR(4) NOT NULL,
+    StudName VARCHAR(255) NOT NULL,
+    Primary Key (StudID)
+);
+
+#b
+INSERT INTO CLASS (StudID,StudName)
+VALUES ("S01","Katie"),
+	("S02","Merry"),
+	("S03", "Joe"),
+	("S04", "Mariam"),
+	("S05", "Jenn")
+;
+
+#c
+SELECT * FROM CLASS;
+
+
+#d
+START TRANSACTION;
+
+INSERT INTO CLASS VALUES("S06","Didu");
+
+ROLLBACK;
+
+INSERT INTO CLASS VALUES("S06","Didu");
+
+COMMIT;
+
+START TRANSACTION;
+
+SAVEPOINT X;
+
+INSERT INTO CLASS VALUES("S07","Yemme");
+
+ROLLBACK TO X;
+
+COMMIT;
+
+SAVEPOINT C;
+
+SELECT * FROM CLASS;
+
+ROLLBACK TO B;
+
+
+
+
+
+
